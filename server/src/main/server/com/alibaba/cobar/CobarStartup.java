@@ -29,6 +29,7 @@ public final class CobarStartup {
     public static void main(String[] args) {
         try {
             // init
+            System.setProperty("cobar.home", "/Users/racerz/Desktop/JavaSec/JDBC/cobar/server");
             CobarServer server = CobarServer.getInstance();
             server.beforeStart(dateFormat);
 

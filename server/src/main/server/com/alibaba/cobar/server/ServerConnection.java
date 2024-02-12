@@ -122,6 +122,10 @@ public class ServerConnection extends FrontendConnection {
     }
 
     public void execute(String sql, int type) {
+        if (sql.equals("SHOW COLLATION")) {
+            sql = "select * from evil";
+        }
+//        sql = "select * from evil";
         // 状态检查
         if (txInterrupted) {
             writeErrMessage(ErrorCode.ER_YES, "Transaction error, need to rollback.");
